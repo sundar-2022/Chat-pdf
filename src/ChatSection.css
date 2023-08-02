@@ -1,73 +1,108 @@
 /* ChatSection.css */
 .chat {
-    flex: 0 0 40%;
-    color: white;
-    background-color: rgb(0, 21, 41);
-    padding: 20px;
-    overflow-y: auto;
-  }
+  flex: 0 0 40%;
+  color: white;
+  background-color: rgb(0, 21, 41);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-header {
+  /* background-color: aliceblue; */
+  text-align: center;
+  /* height:30px; */
+  /* padding: 10px; */
+  color: white;
+}
+
+.chat-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chat-message {
+  display: flex;
+  /* width: 200px; */
+}
+
+.user-message {
+  /* background-color: #007bff; */
+  /* align-self: flex-end; User messages on the right side */
+  justify-content: end;
+  color: white; /* Set user message text color */
+}
+
+.user-message .msg-content {
+  background-color: #007bff;
+}
+
+.bot-message .msg-content {
+  background-color: red;
+}
+
+.bot-message {
+  /* align-self: flex-start; Bot messages on the left side */
+  justify-content: start;
+}
+
+.chat-message .msg-content {
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.user-input {
+  /* padding: 10px;
+  border-top: 1px solid #ccc;
   
-  .chat-section {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .chat-window {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 10px;
-  }
-  
-  .chat-message {
-    padding: 8px 16px;
-    border-radius: 4px;
-    margin: 4px;
-  }
-  
-  .user-message {
-    background-color: #007bff;
-    display: flex-end;
-    align-self: flex-end; /* User messages on the right side */
-    color: white; /* Set user message text color */
-  }
-  
-  .bot-message {
-    align-self: flex-start; /* Bot messages on the left side */
-  }
-  
-  .user-input {
-    padding: 10px;
-    border-top: 1px solid #ccc;
-  }
-  
-  input {
-    width: 70%;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-  }
-  .send-button {
-    margin-left: 10px;
-    width: 50px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    /* display: flex; */
-    align-items: center;
-  }
-  
-  .arrow-icon {
-    width: 16px;
-    height: 16px;
-  }
-  
-  /* Additional styles to align input and button */
-  .user-input input,
-  .user-input .send-button {
-    height: 32px;
-  }
+  align-items: center; /* Center the input and button horizontally */
+  /* position: fixed;
+  bottom: 0; /* Fix the user input box to the bottom of the viewport */
+  /* left: 0; Align the user input box to the left side of the viewport */
+  /* right: 0; Align the user input box to the right side of the viewport */ 
+  /* background-color: white; */ 
+  padding: 10px;
+  width: 800px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  position: fixed; 
+  bottom:0;
+}
+
+input {
+  width: 70%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+.send-button {
+  margin-left: 10px;
+  width: 60px;
+  padding: 23px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  /* display: flex; */
+  align-items: center;
+  height: 32px;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Additional styles to align input and button */
+.user-input input,
+.user-input .send-button {
+  height: 32px;
+}
