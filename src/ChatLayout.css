@@ -80,3 +80,19 @@
 .selected-pdf-button {
   background-color: #66ccff; /* Light blue background color for the selected PDF button */
 }
+
+.pdf-info {
+  display: flex;
+  align-items: center;
+}
+
+.delete-pdf-button {
+  color: red;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
