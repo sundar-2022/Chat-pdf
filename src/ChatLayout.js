@@ -30,6 +30,16 @@ const ChatLayout = () => {
     setSelectedPdfId(pdfId);
   };
 
+  const handlePdfDelete = (pdfId) => {
+    const updatedPdfDataList = pdfDataList.filter((pdfDataItem) => pdfDataItem.id !== pdfId);
+    setPdfDataList(updatedPdfDataList);
+
+    if (selectedPdfId === pdfId) {
+      const latestPdf = updatedPdfDataList[updatedPdfDataList.length - 1];
+      setSelectedPdfId(latestPdf ? latestPdf.id : null);
+    }
+  };
+
   return (
     <div className="container">
       <div className="sidebar">
@@ -60,15 +70,7 @@ const ChatLayout = () => {
                 </button>
                 <button
                   className="delete-pdf-button"
-                  onClick={() => {
-                    const updatedPdfDataList = pdfDataList.filter(
-                      (pdfDataItem) => pdfDataItem.id !== pdfData.id
-                    );
-                    setPdfDataList(updatedPdfDataList);
-                    if (selectedPdfId === pdfData.id) {
-                      setSelectedPdfId(null);
-                    }
-                  }}
+                  onClick={() => handlePdfDelete(pdfData.id)}
                   title="Delete PDF"
                 >
                   🗑️
