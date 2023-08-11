@@ -1,18 +1,20 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ChatLayout from './ChatLayout';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './Home';
+import ChatLayout from './ChatLayout';
+import './App.css'; // Import your App.css here
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Home component will be rendered at the root path */}
-        <Route path="/chat" element={<ChatLayout />} /> {/* ChatLayout component will be rendered at the /chat path */}
+        <Route path='/' element={<Navigate to ="/Home" />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/ChatLayout" element={<ChatLayout />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
+

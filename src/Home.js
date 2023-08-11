@@ -1,22 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
+import './App.css'; 
+import { SidebarData } from './SidebarData';
 
-const Home = () => {
-  return (
-    <div className="home-container">
-      <h1 className="welcome-text">Welcome to the Home Page</h1>
-      <div className="home-image-container">
-        <Link to="/chat">
-          <img src="/Homepage.png" alt="Chat PDF" />
-        </Link>
-        <div className="image-text-container">
-          <p className="image-text">PDF TO TEXT CONVERSION (Q/A)</p>
-          <p className="image-text">There is an easy way to edit PDF text: convert your PDF documents to text with the help of this tool</p>
-        </div>
-      </div>
+function Home() {
+  return ( 
+ 
+  <div className="Sidebar">
+     <ul className='SidebarList'>
+    {SidebarData.map((val, key)=> {
+      return (
+        <li key={key} className='row' 
+        id={window.location.pathname === val.link ? "active": ""}
+        onClick={()=>{window.location.pathname=val.link}}>
+          <div id="icon">{val.icon}</div>
+          <div id="title">
+            {val.title}
+          </div>
+        </li>
+      );
+
+    })}
+     </ul>
     </div>
   );
-};
-
+}
 export default Home;
+
