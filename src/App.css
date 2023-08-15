@@ -9,9 +9,6 @@
  }
 
 .Sidebar{
-/* height: 100%;
-width: 260px;
-background-color: rgb(0, 21, 41); */
 position: fixed;
 top: 0; /* Fixed at the top of the viewport */
 bottom: 0; /* Take the full height of the viewport */
